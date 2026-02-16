@@ -1,0 +1,69 @@
+# Parameter Sweep Configuration
+# Defines parameters and ranges for sensitivity analysis
+
+# Sweep settings
+sweep:
+  method: full_factorial    # full_factorial, latin_hypercube, sobol, random
+  n_samples: 100            # For sampling methods
+  n_replicates: 10          # Replicates per configuration
+  seed: 42                  # Random seed
+  parallel: true            # Enable parallel execution
+  n_workers: -1             # -1 for auto
+
+# Parameter ranges to explore
+parameters:
+  # Fleet configuration
+  n_trucks:
+    type: categorical
+    values: [20, 30, 40, 50, 60, 80]
+    
+  fleet_mix:
+    type: categorical
+    values:
+      - [0.0, 1.0, 0.0]    # All medium
+      - [0.5, 0.5, 0.0]    # 50% small, 50% medium
+      - [0.0, 0.5, 0.5]    # 50% medium, 50% large
+      - [0.33, 0.34, 0.33] # Balanced mix
+      
+  routing_policy:
+    type: categorical
+    values: [shortest, fastest, congestion_aware, adaptive]
+    
+  # Operational parameters
+  departure_strategy:
+    type: categorical
+    values: [uniform, staggered, demand_driven]
+    
+  traffic_signal_timing:
+    type: integer
+    values: [60, 90, 120]
+    
+  # Network parameters
+  background_traffic:
+    type: continuous
+    values: [0.0, 0.2, 0.4, 0.6]
+    
+  demand_rate:
+    type: continuous
+    values: [5, 10, 15, 20]  # Tasks per hour
+
+# Objectives for multi-objective optimization
+objectives:
+  - name: throughput
+    direction: maximize
+    weight: 0.4
+    
+  - name: efficiency
+    direction: maximize
+    weight: 0.3
+    
+  - name: stability
+    direction: maximize
+    weight: 0.3
+
+# Output settings
+output:
+  save_results: true
+  results_path: results/sweep_results.json
+  generate_report: true
+  report_path: results/sweep_report.html

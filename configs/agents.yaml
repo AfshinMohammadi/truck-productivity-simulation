@@ -1,0 +1,52 @@
+# Agent Configuration
+# Defines agent types, behaviors, and parameters
+
+# Truck fleet configuration
+trucks:
+  count: 50
+  type_distribution:
+    small: 0.2      # 20% small trucks
+    medium: 0.5     # 50% medium trucks
+    large: 0.3      # 30% large trucks
+
+# Truck type specifications
+truck_types:
+  small:
+    max_speed: 60       # km/h
+    capacity: 5         # load units
+    fuel_rate: 0.08     # L/km
+    length: 6           # meters
+    
+  medium:
+    max_speed: 50
+    capacity: 10
+    fuel_rate: 0.12
+    length: 10
+    
+  large:
+    max_speed: 40
+    capacity: 20
+    fuel_rate: 0.18
+    length: 16
+
+# Routing policies
+routing:
+  default_policy: congestion_aware
+  policies:
+    - shortest          # Minimize distance
+    - fastest           # Minimize time
+    - congestion_aware  # Avoid congestion
+    - adaptive          # Real-time adaptation
+  reroute_frequency: 10  # Minutes between rerouting
+
+# Task assignment
+assignment:
+  strategy: nearest     # nearest, load_balanced, priority
+  max_queue_size: 5     # Max tasks per truck
+  priority_levels: 3    # Number of priority levels
+
+# Traffic management agents
+traffic_management:
+  enabled: true
+  strategy: adaptive    # fixed, adaptive, coordinated
+  coordination_window: 300  # Coordination window in seconds

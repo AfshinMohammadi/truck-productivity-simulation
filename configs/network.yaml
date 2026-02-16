@@ -1,0 +1,37 @@
+# Network Configuration
+# Defines the road network topology and characteristics
+
+network:
+  type: grid          # grid, radial, random, custom
+  dimensions: [8, 8]  # Grid dimensions (rows x columns)
+  edge_length: 1.0    # Length of each edge in km
+
+# Special node types
+nodes:
+  # Depot configuration
+  depot:
+    count: 2
+    placement: corners  # corners, random, custom
+    service_time: 15.0  # Average loading time in minutes
+    
+  # Delivery point configuration  
+  delivery:
+    count: 20
+    placement: random   # random, grid, custom
+    service_time: 10.0  # Average unloading time in minutes
+
+# Edge (road segment) properties
+edges:
+  capacity: 50           # Base capacity (vehicles/hour)
+  free_flow_speed: 40    # Free flow speed (km/h)
+  lanes: 1               # Number of lanes per direction
+  road_type: local       # local, arterial, highway
+
+# Traffic signal settings
+signals:
+  enabled: true
+  timing:
+    min_green: 20        # Minimum green time (seconds)
+    max_green: 60        # Maximum green time (seconds)
+    yellow: 3            # Yellow time (seconds)
+    all_red: 2           # All red clearance time (seconds)
