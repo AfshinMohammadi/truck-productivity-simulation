@@ -263,4 +263,3 @@ If you use this code in your research, please cite:
 
 **Afshin Mohammadi**  
 Email: Afshinciv@gmail.com  
-LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
