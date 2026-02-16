@@ -28,7 +28,7 @@ This simulation framework models truck fleet operations where individual agents 
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/truck-productivity-simulation.git
+git clone https://github.com/afshinmohammadi/truck-productivity-simulation.git
 cd truck-productivity-simulation
 
 # Create virtual environment
@@ -255,7 +255,7 @@ If you use this code in your research, please cite:
   author = {Mohammadi, Afshin},
   title = {Agent-Based Modeling for Truck Productivity under Traffic Constraints},
   year = {2024},
-  url = {https://github.com/yourusername/truck-productivity-simulation}
+  url = {https://github.com/afshinmohammadi/truck-productivity-simulation}
 }
 ```
 
