@@ -7,7 +7,7 @@ Thank you for your interest in contributing to this project! This document provi
 1. Fork the repository
 2. Clone your fork locally
    ```bash
-   git clone https://github.com/yourusername/truck-productivity-simulation.git
+   git clone https://github.com/afshinmohammadi/truck-productivity-simulation.git
    cd truck-productivity-simulation
    ```
 3. Create a virtual environment
