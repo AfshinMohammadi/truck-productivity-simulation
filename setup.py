@@ -15,7 +15,7 @@ setup(
     description="Agent-based simulation for truck productivity under traffic constraints",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/truck-productivity-simulation",
+    url="https://github.com/afshinmohammadi/truck-productivity-simulation",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 4 - Beta",
